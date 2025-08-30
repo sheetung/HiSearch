@@ -3,8 +3,8 @@ kind: Plugin
 metadata:
   author: sheetung
   name: HiSearch
-  repository: 'https://github.com/sheetung/langbot-plugin-all'
-  version: 0.2.7
+  repository: 'https://github.com/sheetung/HiSearch'
+  version: 0.2.8
   description:
     en_US: 集成网盘资源搜索
     zh_Hans: 集成网盘资源搜索
