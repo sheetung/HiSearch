@@ -1,0 +1,10 @@
+langbot-plugin
+aiohttp
+fastapi
+uvicorn
+httpx
+requests
+jsonpath-ng
+cachetools
+beautifulsoup4
+lxml

@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: Plugin
+metadata:
+  author: sheetung
+  name: HiSearch
+  repository: 'https://github.com/sheetung/langbot-plugin-all'
+  version: 0.2.7
+  description:
+    en_US: 集成网盘资源搜索
+    zh_Hans: 集成网盘资源搜索
+  label:
+    en_US: HiSearch
+    zh_Hans: HiSearch
+  icon: assets/icon1.svg
+spec:
+  config:
+    - name: fromSite
+      type: select
+      label:
+        en_US: 'Default source site'
+        zh_Hans: '默认来源站点'
+      default: kk大厅
+      options:
+        - name: 全部
+          label:
+            en_US: 'All Sources'
+            zh_Hans: '搜索全部'
+        - name: kk大厅
+          label:
+            en_US: 'KK Hall'
+            zh_Hans: 'kk大厅'
+        - name: kk短剧
+          label:
+            en_US: 'KK Short Drama'
+            zh_Hans: 'kk短剧'
+        - name: kk橘子资源
+          label:
+            en_US: 'KK Orange Resources'
+            zh_Hans: 'kk橘子资源'
+        - name: kk小宇
+          label:
+            en_US: 'KK Xiao Yu'
+            zh_Hans: 'kk小宇'
+        - name: kk小悠
+          label:
+            en_US: 'KK Xiao You'
+            zh_Hans: 'kk小悠'
+        - name: kk天天追剧
+          label:
+            en_US: 'KK Daily Drama'
+            zh_Hans: 'kk天天追剧'
+
+    - name: type
+      type: select
+      label:
+        en_US: 'Default pan type'
+        zh_Hans: '默认网盘类型'
+      default: 夸克网盘
+      options:
+        - name: 全部
+          label:
+            en_US: 'All Pan'
+            zh_Hans: '全部网盘'
+        - name: 夸克网盘
+          label:
+            en_US: 'Quark Pan'
+            zh_Hans: '夸克网盘'
+        - name: 百度网盘
+          label:
+            en_US: 'Baidu Pan'
+            zh_Hans: '百度网盘'
+        - name: 迅雷云盘
+          label:
+            en_US: 'Thunder Pan'
+            zh_Hans: '迅雷云盘'
+
+    - name: resCounts
+      type: integer
+      label:
+        en_US: 'Default search result count'
+        zh_Hans: '默认搜索结果数量'
+      default: 5
+  components:
+    EventListener:
+      fromDirs:
+      - path: components/event_listener/
+execution:
+  python:
+    path: main.py
+    attr: HiSearch
