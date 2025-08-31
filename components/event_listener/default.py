@@ -34,8 +34,8 @@ from OnePanSearchApi.main import SourceQuery, search_pan
 
 class DefaultEventListener(EventListener):
 
-    def __init__(self):
-        super().__init__()
+    async def initialize(self):
+        await super().initialize()
         self.trigger_keyword = "搜"
 
         @self.handler(events.PersonMessageReceived)
@@ -62,7 +62,8 @@ class DefaultEventListener(EventListener):
             # 从插件配置读取参数
             plugin_config_ = self.plugin.get_config()
             # print(f'plugin_config_: {plugin_config_}')
-            fromSite = plugin_config_.get("fromSite", "kk大厅")
+            fromSite_all = plugin_config_.get("fromSite", "kk大厅")
+            fromSite = "" if fromSite_all == "搜索全部" else fromSite_all
             type_ = plugin_config_.get("type", "夸克网盘")
             # page = plugin_config_.get("resCounts", 1)
             page = 1
@@ -127,4 +128,3 @@ class DefaultEventListener(EventListener):
         if result['total'] > 5:
             lines.append(f"显示前5条，共{result['total']}条结果")
         return "\n".join(lines)
-

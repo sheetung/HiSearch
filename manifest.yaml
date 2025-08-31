@@ -4,7 +4,7 @@ metadata:
   author: sheetung
   name: HiSearch
   repository: 'https://github.com/sheetung/HiSearch'
-  version: 0.2.9
+  version: 0.3.2
   description:
     en_US: 集成网盘资源搜索
     zh_Hans: 集成网盘资源搜索
@@ -21,10 +21,6 @@ spec:
         zh_Hans: '默认来源站点'
       default: kk大厅
       options:
-        - name: 全部
-          label:
-            en_US: 'All Sources'
-            zh_Hans: '搜索全部'
         - name: kk大厅
           label:
             en_US: 'KK Hall'
@@ -57,10 +53,6 @@ spec:
         zh_Hans: '默认网盘类型'
       default: 夸克网盘
       options:
-        - name: 全部
-          label:
-            en_US: 'All Pan'
-            zh_Hans: '全部网盘'
         - name: 夸克网盘
           label:
             en_US: 'Quark Pan'
