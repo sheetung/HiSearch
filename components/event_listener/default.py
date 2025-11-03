@@ -63,11 +63,13 @@ class DefaultEventListener(EventListener):
             plugin_config_ = self.plugin.get_config()
             # print(f'plugin_config_: {plugin_config_}')
             fromSite_all = plugin_config_.get("fromSite", "kk大厅")
-            fromSite = "" if fromSite_all == "搜索全部" else fromSite_all
             type_ = plugin_config_.get("type", "夸克网盘")
             # page = plugin_config_.get("resCounts", 1)
             page = 1
             pageSize = plugin_config_.get("resCounts", 5)
+            is_all_enable = plugin_config_.get("is_all_enable", False)
+            # 如果fromSite不传则搜全部；如果is_all_enable为true那么半年里所有站点
+            fromSite = "" if is_all_enable else fromSite_all
 
             # print(f'fromSite: {fromSite}, type: {type_}, page: {page}, pageSize: {pageSize}')
 
